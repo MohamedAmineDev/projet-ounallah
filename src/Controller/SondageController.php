@@ -38,11 +38,14 @@ class SondageController extends AbstractController
             ->setUser($this->getUser())
             ->setCvv($req->request->get('cvv'));
             $manager->persist($paiment);
-            $sondage->setMisEnLigne();
-            $manager->persist($sondage);
-            //$this->getDoctrine()->getManager()->flush();
             $manager->flush();
-            return $this->redirectToRoute("sondage_index",['idEnqueteur'=>$this->getUser()->getId()]);
+            $sondage->setMisEnLigne(true);
+            $form = $this->createForm(SondageType::class, $sondage);
+            $form->handleRequest($req);
+            //$manager->persist($sondage);
+            $this->getDoctrine()->getManager()->flush();
+            
+            return $this->redirectToRoute("sondageMiseEnLigne");
         }
         return $this->render("paiement\paiementSondage.html.twig",['sondage'=>$sondage]);
     }
@@ -53,6 +56,23 @@ class SondageController extends AbstractController
      */
     public function choixEnqueteurSondage(Sondage $sondage){
         return $this->render("paiement/questionPaiement.html.twig",['sondage'=>$sondage]);
+    }
+
+    /**
+     * @Route("/listesondagemiseenligne",name="sondageMiseEnLigne")
+     */
+    public function listSondagePaye(){
+        $sondages=$this->getUser()->getSondages();
+        $i=0;
+        $res=[];
+        $l=count($sondages);
+        while($i<$l){
+            if($sondages[$i]->getMisEnLigne()==1){
+                array_push ($res,$sondages[$i]);
+            }
+            $i++;
+        }
+        return $this->render("sondage/listeSondageMiseEnLigne.html.twig",['sondages'=>$res,'idEnqueteur'=>$this->getUser()->getId()]);
     }
 
    
