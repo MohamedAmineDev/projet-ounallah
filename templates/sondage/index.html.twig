@@ -1,0 +1,129 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sondage index{% endblock %}
+  {% block stylesheets %}
+<style>
+
+    .button4 {
+        height: 10px;
+        display: inline-block;
+        background: #e30b46;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 15px 15px;
+        border-radius: 5px;
+        box-shadow: 0px 10px 1px -1px rgba(0, 0, 0, 0.7);
+        cursor: pointer;
+        -webkit-transition: all ease-out 300ms;
+    }
+    .button4:hover {
+        box-shadow: 0px 1px 1px -5px rgb(238, 237, 237);
+
+    }
+
+    body {
+        margin: 0;
+        background: linear-gradient(45deg, #969ccd, #f3f3f5);
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    table {
+        width: 800px;
+        border-collapse: collapse;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    th,
+    td {
+        padding: 15px;
+        background-color: rgba(255,255,255,0.2);
+        color: #fff;
+    }
+
+    th {
+        text-align: left;
+    }
+
+
+
+    tr :hover{
+
+         background-color: rgba(255,255,255,0.3);
+     }
+
+    td :hover{
+
+         content: "";
+         left: 0;
+         right: 0;
+         top: -9999px;
+         bottom: -9999px;
+         background-color: rgba(255,255,255,0.2);
+         z-index: -1;
+
+
+    }
+
+
+
+</style>
+  {% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h3 style="text-align: center;margin-right: 100px;margin-left: 100px;margin-top: 70px" class='neon-text'>Liste des sondages crées et non mis en ligne</h3>
+       
+            <form action="{{ path('ajouter_sujet', {'id':idEnqueteur}) }}">
+                <Button type="submit" class="button3">Ajouter Un Sondage</Button>
+            </form>
+        </button>
+        <br/>
+        <br/>
+        <table class="table">
+        <thead>
+            <tr>
+
+                <th>Titre</th>
+                <th>Nombre de participant</th>
+                <th>Nombre de question</th>
+               
+                <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sondage in sondages %}
+           
+                <tr>
+            <td>{{ sondage.titre }}</td>
+            <td>{{ sondage.nbParticipant }}</td>
+            <td>{{ sondage.nbQuestion }}</td>
+           
+            <td>
+                
+             <button  type="button1"  class="button1" > <a style="color:black"  href="{{ path('sondage_show', {'id': sondage.id , 'idEnqueteur': idEnqueteur }) }}">Consulter</a></button>
+            <button  type="button1"  class="button2" > <a style="color:black"  href="{{ path('sondage_edit', {'id': sondage.id,'idEnqueteur': idEnqueteur }) }}">Modifier</a></button>
+            <button  type="button1"  class="button3"> <a style="color:black"  href="{{ path('neww', {'idSondage': sondage.id,'idEnqueteur': idEnqueteur }) }}">ajouter un question</a></button>
+
+                {#     <button  type="button" > <a style="color:black" href="{{ path('option_new',{'id':question.id} ) }}">ajouter option</a></button>
+#}
+
+
+
+
+           
+            </td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

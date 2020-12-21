@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sondage index{% endblock %}
+
+{% block body %}
+
+    <h1>Sondage index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Titre</th>
+
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for sondage in sondages %}
+            <tr>
+
+                <td>{{ sondage.titre }}</td>
+
+                <td>
+                    <a href="{{ path('creersondage', {'id': sondage.id}) }}">voter</a>
+
+
+                </td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

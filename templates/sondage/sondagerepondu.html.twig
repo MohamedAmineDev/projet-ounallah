@@ -1,0 +1,13 @@
+{% block body %}
+<h1>hello</h1>
+    {% for sondage in sondages %}
+        <div>
+            <p>Titre : {{sondage.titre}}
+                nombre participant: {{sondage.nbParticipant}}
+                nombre de question: {{sondage.nbQuestion}}
+                nombre de réponse : {{sondage.nbReponse}}
+        </p>
+            
+        </div>
+    {% endfor %}
+{% endblock body %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{%  block body %}
+
+<h1> Voulez-vous profiter du service Consulting </h1>
+
+
+<form action="">
+    <Button type="submit">Oui</Button>
+</form>
+    
+
+
+
+<form action="{{ path('neww',{'idEnqueteur':idEnqueteur , 'idSondage' :idSondage }) }}">
+    <Button type="submit">Non</Button>
+</form>
+<!-- !-->
+{% endblock %}

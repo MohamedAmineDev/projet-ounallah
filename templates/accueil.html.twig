@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{%  block body %}
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">    <img src="https://scontent.ftun4-1.fna.fbcdn.net/v/t1.15752-9/131032922_1156434281466016_3160520140419395504_n.png?_nc_cat=103&ccb=2&_nc_sid=ae9488&_nc_ohc=jxThqoabDycAX8CDkfW&_nc_ht=scontent.ftun4-1.fna&oh=6e07304c5256131b4a482159451a3913&oe=5FFC6169">
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" style="color:#10aeda">Accueil</a>
+        </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#">Qui sommes-nous</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sondage
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Créer</a></li>
+                        <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Répondre</a></li>
+          </ul>
+        </li>
+          
+       <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+  
+    <a style=" margin:1% ; border-color: #10aeda; background-color:#10aeda; "class="btn btn-primary" href="{{path('app_login')}}">Se connecter</a>
+  <button style="margin:1%  ; width: 150px;"class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">S'inscrire</button>
+  <ul class="dropdown-menu" style="margin-left: 86.5%; margin-top: -1%;  ">
+    <li><a class="dropdown-item" href="{{path('addEnqueteur')}}">Enqueteur</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="{{path('addsonde')}}">sondé</a></li>
+  </ul>
+    </div>
+  </div>
+</nav>
+<div style="width: 66%;margin-left: 15%;
+    margin-top: 2%;"id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img style="height: 391px;"src="https://scontent.ftun6-1.fna.fbcdn.net/v/t1.15752-9/131753348_1099974753780555_9030089750201372796_n.png?_nc_cat=105&ccb=2&_nc_sid=ae9488&_nc_ohc=nJeo0S4sMa0AX9K2C1B&_nc_ht=scontent.ftun6-1.fna&oh=255ec98ff6f79d314ba39b23ea81b432&oe=5FFF8782" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block" style="color:  #800000">
+        <h5><span style="color:white">Les entreprises</span>, nous vous aidons à enqueter</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img  style="height: 391px;"src="https://scontent.ftun6-1.fna.fbcdn.net/v/t1.15752-9/131892029_2766818270301565_1882777479465656239_n.jpg?_nc_cat=108&ccb=2&_nc_sid=ae9488&_nc_ohc=zmwDb4OqZEAAX9fRfwz&_nc_ht=scontent.ftun6-1.fna&oh=0c05485dca2ac08f04b7422192b81109&oe=5FFF402B" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block" style="color:#800000">
+        <h5><span style="color:white">Les sondés</span>, parce que votre avis est demandé, vous êtes rémunéré </h5>
+       
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img style="height: 391px;"src="https://scontent.ftun6-1.fna.fbcdn.net/v/t1.15752-9/131507737_445142149980800_5538964173218237763_n.png?_nc_cat=105&ccb=2&_nc_sid=ae9488&_nc_ohc=-cKxu51q5cUAX_vqzOe&_nc_ht=scontent.ftun6-1.fna&oh=fbdeea989db3e1dbd1c646a044db0c06&oe=60024EB1" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block" style="color:#800000">
+        <h5>La création ou la réponse est pratique, facile et efficace </h5>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+        <img class="mb-2" style="height: 58px;
+    width: 14%;" src="https://scontent.ftun4-1.fna.fbcdn.net/v/t1.15752-9/131362750_1645750308942476_3542390376714356479_n.png?_nc_cat=102&ccb=2&_nc_sid=ae9488&_nc_ohc=9BIGKuYvkbAAX_-PNIj&_nc_ht=scontent.ftun4-1.fna&oh=6e984e2024aaae71d89928aee1f84d36&oe=5FFB7EE4" alt="" width="24" height="19">
+        <small class="d-block mb-3 text-muted">© 2020-2021</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Sondage</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Création</a></li>
+          <li><a class="link-secondary" href="#">Répondre</a></li>
+          <li><a class="link-secondary" href="#">Statistique</a></li>
+          <li><a class="link-secondary" href="#">Rémunération</a></li>
+        
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Qui sommes-nous</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Le concept</a></li>
+          <li><a class="link-secondary" href="#">Contact</a></li>
+          <li><a class="link-secondary" href="#">Nous rejoindre</a></li>
+      
+        </ul>
+      </div>
+     
+    </div>
+  </footer>
+{% endblock %}

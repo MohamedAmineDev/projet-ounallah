@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+  {% block stylesheets %}
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+      <style>
+          .button4 {
+              height: 20px;
+              display: inline-block;
+              background: #4285f4;
+              color: #fff;
+              text-transform: uppercase;
+              padding: 20px 30px;
+              border-radius: 5px;
+              box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+              cursor: pointer;
+              -webkit-transition: all ease-in-out 300ms;
+              transition: all ease-in-out 300ms;
+          }
+          .button4:hover {
+              box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
+              -webkit-transform: translate(0px, -10px) scale(1.2);
+              transform: translate(0px, -10px) scale(1.2);
+          }
+          .button5 {
+              height: 20px;
+
+              display: inline-block;
+              background: #ba3e57;
+              color: #fff;
+              text-transform: uppercase;
+              padding: 20px 30px;
+              border-radius: 5px;
+              box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+              cursor: pointer;
+              -webkit-transition: all ease-in-out 300ms;
+              transition: all ease-in-out 300ms;
+          }
+          .button5:hover {
+              box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
+              -webkit-transform: translate(0px, -10px) scale(1.2);
+              transform: translate(0px, -10px) scale(1.2);
+          }
+
+      </style>
+  {% endblock %}
+{% block body %}
+
+    <div class="box">
+
+    <div style=" margin-right: 200px;margin-left: 200px;margin-top: 200px">
+
+    <h3 style="margin-right: 100px;margin-left: 100px;margin-top: 200px" class='neon-text'>Creer votre Question !</h3>
+   <br/><br/>
+        <h4 style="    margin-left: 93%;
+" class='neon-text'>  <a href="{{ path('ChoixRemun',{'idSondage': sondage.id} )}}">terminer</a>
+        </h4>
+        <h2 style="font-size: 15px">Sondage:</h2>
+    <input style='width:300px;margin-left:10px;height:25px;padding:12px; background-color: white' type="text" id="titre" name="titre" value="{{sondage.titre}}" disabled />
+
+    {{ form_start(form) }}
+    <h2 style="font-size: 15px">{{ form_row(form.texte ,{'label':'Entrez votre question'}) }}</h2>
+    <div class="col-sm-8 col-sm-offset-2" id="option_list" data-prototype="{{ form_widget(form.options.vars.prototype)|e('html_attr') }}">
+
+        {% for row in form.options %}
+            <div class="panel panel-warning">
+                <br/><br/>
+
+                <div class="panel-body">
+                    {{ form_row(row) }}
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+    {{ form_end(form) }}
+    </div>
+
+    </div>
+
+{% endblock %}

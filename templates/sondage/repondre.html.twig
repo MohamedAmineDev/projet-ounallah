@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <form action="{{path('RecupererReponse',{'id':app.user.id , 'idSondage':idSondage})}} " method="POST">
+        {% for question in Questions %}
+            <p> {{question.texte}} </p>
+            <div style="margin-left: 20px;">
+                {% for option in Options %}
+                <div>
+                    <input type="radio" id="{{option.id}}" name="{{question.id}}" value="{{option.contenue}}">
+                    <label for="{{option.contenue}}">{{option.contenue}} </label>
+                </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    <button type="submit">Envoyer</button>
+    </form>
+    
+
+{% endblock %}

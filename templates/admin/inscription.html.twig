@@ -1,0 +1,29 @@
+
+{% extends 'base.html.twig' %}
+
+{%  block body %}
+<ul class="a">
+    <img src="https://scontent.ftun2-1.fna.fbcdn.net/v/t1.15752-9/129516733_1070227883401672_4190008357141565674_n.png?_nc_cat=102&ccb=2&_nc_sid=ae9488&_nc_ohc=gCqGsGF6InkAX_tf-3C&_nc_ht=scontent.ftun2-1.fna&oh=f41d891f6dcc6809fc2a88bb5f7fd105&oe=5FF425DC">
+</ul>
+ <div class="c" >
+ 
+<br>
+    <h2 style="text-align: center; padding: 20px; color:  #0A1538;" >Formulaire d'inscription  </h2>
+        <br>
+        <div style="margin-left: 100px;margin-right: 160px ;" >
+       {{form_start(form)}}
+        <br>
+        <p style="color: #0A1538;">{{form_label(form.password)}}</p>
+        <p style="margin-left: 290px;margin-top: -20px;">{{form_widget(form.password)}}</p>
+        <br>
+        <p style="color: #0A1538;">{{form_label(form.email)}}</p>
+        <p style="margin-left: 290px;margin-top: -20px;">{{form_widget(form.email)}}</p>
+        <br>
+           {{form_end(form)}}
+
+      
+        
+        </br>
+      </div>
+   </div>
+{% endblock %}

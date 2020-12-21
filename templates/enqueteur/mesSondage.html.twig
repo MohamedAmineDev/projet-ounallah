@@ -1,0 +1,44 @@
+{% block body %}
+	{% for sondage in sondages %}
+		<article>
+			<div>
+				<p>titre :
+					{{sondage.titre}} <br/>
+					nombre de question :
+					{{sondage.nbQuestion}}<br/>
+					nombres de réponse max :
+					{{sondage.nbReponse}}<br/>
+					nom sujet
+					{{sondage.sujet.titre}}
+				</p>
+				<div class="listes des reponse">
+					{% if sondage.Questions %}
+						{% if sondage.Questions %}
+							{% for question in sondage.Questions %}
+                            {% for reponse in question.reponses %}
+                                <p>
+									<span>{{reponse.utilisateur.nom}}</span>:<span>{{reponse.contenu}}</span>
+								</p>
+                            {% endfor %}
+								
+							{% endfor %}
+						{% endif %}
+
+					{% endif %}
+					{% if sondage.questionChoixMultiples %}
+						{% for questionChoix in sondage.questionChoixMultiples %}
+                        {% for reponse in questionChoix.reponses %}
+                            <p>
+								<span>{{reponse.utilisateur.nom}}</span>:<span>{{reponse.contenu}}</span>
+							</p>
+                        {% endfor %}
+							
+						{% endfor %}
+					{% endif %}
+
+				</div>
+			</div>
+		</article>
+	{% endfor %}
+{% endblock %}
+questionChoixMultiples

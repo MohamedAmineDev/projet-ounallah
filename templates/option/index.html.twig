@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Option index{% endblock %}
+
+{% block body %}
+    <h1>Option index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Contenue</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for option in options %}
+            <tr>
+                <td>{{ option.id }}</td>
+                <td>{{ option.contenue }}</td>
+                <td>
+                    <a href="{{ path('option_show', {'id': option.id}) }}">show</a>
+                    <a href="{{ path('option_edit', {'id': option.id}) }}">edit</a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="{{ path('option_new', {'id':option.id}) }}">Create new</a>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

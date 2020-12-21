@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{%  block body %}
+
+<div style="background-color:#8FA0D3 ; margin-right: 200px;margin-left: 200px;margin-top: 200px">
+
+    <h3 style="color: white; margin-left: 50px;padding: 20px" >Avis sondage</h3>
+
+    <div style="margin-left: 400px " >
+
+<div >
+                   <h3 >{{ sondage.titre }}</h3>
+</div>
+                   {% for question in sondage.questions %}
+                       <h5 style="margin-left: 100px">{{ question.texte }}</h5>
+{% for option in question.options %}
+    <div style="margin-left: 100px">
+        <input type="checkbox" id="{{  option.contenue }}" name="{{  option.contenue }}"
+               >
+        <label for="{{  option.contenue }}">{{  option.contenue }}</label>
+    </div>
+{% endfor %}
+                       {% endfor %}
+        <button>voter</button>
+
+    </div></div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+       

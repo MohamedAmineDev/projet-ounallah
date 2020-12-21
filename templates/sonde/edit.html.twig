@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes informations{% endblock %}
+
+{% block body %}
+<ul class="a">
+    <img src="https://scontent.ftun2-1.fna.fbcdn.net/v/t1.15752-9/129516733_1070227883401672_4190008357141565674_n.png?_nc_cat=102&ccb=2&_nc_sid=ae9488&_nc_ohc=gCqGsGF6InkAX_tf-3C&_nc_ht=scontent.ftun2-1.fna&oh=f41d891f6dcc6809fc2a88bb5f7fd105&oe=5FF425DC">
+</ul>
+ <div class="c" >
+    
+   <br>
+    <h2 style="text-align: center; padding: 20px; color:  #0A1538;">Modifier mes Informations  </h2>
+        <br>
+        <div style="margin-left: 100px;margin-right: 160px ;" >
+         {{form_start(form)}}
+        <p style="color: #0A1538;">{{form_label(form.image)}}</p>
+        <p style="margin-left: 290px;margin-top: -20px;">{{form_widget(form.image)}}</p>
+
+        <p style="color: #0A1538;">{{form_label(form.nom)}}</p>
+        <p style="margin-left: 290px;margin-top: -20px;">{{form_widget(form.nom)}}</p>
+
+        <p style="color: #0A1538;">{{form_label(form.prenom)}}</p>
+        <p style="margin-left: 290px;margin-top: -20px;">{{form_widget(form.prenom)}}</p>
+
+        <p style="color: #0A1538;">{{form_label(form.adresse)}}</p>
+        <p style="margin-left: 290px;margin-top: -20px;">{{form_widget(form.adresse)}}</p>
+
+        <p style="color: #0A1538;">{{form_label(form.email)}}</p>
+        <p style="margin-left: 290px;margin-top: -20px;">{{form_widget(form.email)}}</p>
+<div >
+        <p style="color: #0A1538;">{{form_label(form.password)}}</p>
+        <p style="margin-left: 290px;margin-top: -20px;">{{form_widget(form.password)}}</p>
+</div>
+        <p style="color: #0A1538;">{{form_label(form.cin)}}</p>
+        <p style="margin-left: 290px;margin-top: -20px;">{{form_widget(form.cin)}}</p>
+
+        <p style="color: #0A1538;">{{form_label(form.tel)}}</p>
+        <p style="margin-left: 290px;margin-top: -20px;">{{form_widget(form.tel)}}</p>
+
+        <p style="color: #0A1538;">{{form_label(form.dateNaissance)}}</p>
+        <p style="margin-left: 290px;margin-top: -20px;">{{form_widget(form.dateNaissance)}}</p>
+
+        <p style="color: #0A1538;">{{form_label(form.genre)}}</p>
+        <p style="margin-left: 290px;margin-top: -20px;">{{form_widget(form.genre)}}</p>
+
+        <br><br><br>
+         <p style="margin-left: 290px;">{{form_widget(form.save_sonde,{ 'attr': {'class': 'btn btn-primary'},'label':'update' })}}</p>
+          
+           {{form_end(form)}}
+          
+        
+
+        
+        </br>
+      </div>
+   </div>
+{% endblock %}

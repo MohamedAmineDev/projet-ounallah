@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{%  block body %}
+
+<div style="background-color:#8FA0D3 ; margin-right: 200px;margin-left: 200px;margin-top: 200px">
+
+    <h3 style="color: white; margin-left: 50px;padding: 20px" >Creation d'un question</h3>
+    <div style="margin-left: 400px " >
+        sondage:</br>
+        <input style='width:300px;margin-left:10px;height:25px;padding:12px; background-color: white' type="text" id="titre" name="titre" value="{{sondage.titre}}" disabled />
+
+        {{ form_start(form) }}
+    {{ form_widget(form) }}
+        </br>
+        <button class="SubmitType">{{ button_label|default('suivant') }}</button>
+        <button class="SubmitType" > <a style="color:black" href="{{ path('question_index') }}">annuler</a></button>
+
+        {{ form_end(form) }}
+        </br>
+
+
+    </div>
+</div>
+{% endblock %}

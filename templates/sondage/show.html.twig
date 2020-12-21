@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sondage{% endblock %}
+
+{% block body %}
+    <h1>Sondage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ sondage.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ sondage.titre }}</td>
+            </tr>
+            <tr>
+                <th>NbParticipant</th>
+                <td>{{ sondage.nbParticipant }}</td>
+            </tr>
+            <tr>
+                <th>NbQuestion</th>
+                <td>{{ sondage.nbQuestion }}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <a href="{{ path('sondage_index',{'idEnqueteur':idEnqueteur}) }}" onclick="return confirm('are u sure?')" >back to list</a>
+
+
+    <a href="{{ path('sondage_edit', {'id': sondage.id ,'idEnqueteur':idEnqueteur}) }}">edit</a>
+
+    {{ include('sondage/_delete_form.html.twig') }}
+{% endblock %}

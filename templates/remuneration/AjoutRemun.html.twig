@@ -1,0 +1,60 @@
+
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">    
+    <img src="https://scontent.ftun4-1.fna.fbcdn.net/v/t1.15752-9/131032922_1156434281466016_3160520140419395504_n.png?_nc_cat=103&ccb=2&_nc_sid=ae9488&_nc_ohc=jxThqoabDycAX8CDkfW&_nc_ht=scontent.ftun4-1.fna&oh=6e07304c5256131b4a482159451a3913&oe=5FFC6169">
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" style="color:#10aeda">Accueil</a>
+        </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#">Qui sommes-nous</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sondage
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Créer</a></li>
+                        <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Répondre</a></li>
+          </ul>
+        </li>
+          
+       <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+         <a style=" margin:1% color:#10aeda; border-color: #10aeda; background-color:#10aeda; "class="btn btn-primary" href="{{path('app_logout')}}">Se déconnecter</a>
+
+     
+    </div>
+  </div>
+</nav>
+ <div class="font-monospace" >
+{{ form_start(form) }}
+<br>
+<h1 style=" margin-left: 20px;"> Ajouter un nouveau type de rémunération </h1><br>
+<div class="container" style=" margin-left: 100px; width: 450px; ">
+   <br>
+    <div>
+        {{ form_row(form.nom,{'attr':{'class':'form-control'}}) }} 
+        {{ form_row(form.offre,{'attr':{'class':'form-control'}}) }} 
+    <br><br>
+  <button  class="btn btn-info"  > 
+    Ajouter
+  </button>
+
+</div>
+{{ form_end(form) }}
+</div>
+{% endblock %}
